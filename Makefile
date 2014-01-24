@@ -10,7 +10,7 @@ sources:
 	for i in ${SRC_DIRS}; do mv $$i/*.tar.gz . ; done
 
 rpms: sources
-	for i in ${PACKAGES}; do rpmbuild -ta --define='dist .$$SPRINT.el6' $$i*gz ; done
+	for i in ${PACKAGES}; do rpmbuild -ta --define='dist .${SPRINT}.el6' $$i*gz ; done
 
 clean:
 	rm -f *.tar.gz;
