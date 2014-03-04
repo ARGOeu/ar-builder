@@ -2,7 +2,7 @@
 PACKAGES=ar-release ar-consumer ar-sync ar-compute ar-local-compute ar-transit ar-api
 SRC_DIRS=../ar-release ../log-consumer ../ar-sync ../compute-engine ../ar-transit ../ar-api
 SPEC_FILES=../ar-release/ar-release.spec ../log-consumer/ar-consumer.spec ../ar-sync/ar-sync.spec ../compute-engine/ar-compute.spec ../compute-engine/ar-local-compute.spec ../ar-transit/ar-transit.spec ../ar-api/ar-api.spec
-SPRINT=20
+SPRINT=21
 
 sources:
 	for i in ${SRC_DIRS}; do cd $$i ; make sources ; done
