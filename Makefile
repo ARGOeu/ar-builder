@@ -1,12 +1,12 @@
-#PACKAGES="ar-release ar-consumer ar-sync ar-compute ar-local-compute ar-transit ar-api"
-PACKAGES=ar-release ar-consumer ar-sync ar-compute ar-local-compute ar-transit ar-api
-SRC_DIRS=../ar-release ../log-consumer ../ar-sync ../compute-engine ../ar-transit ../ar-api
-SPEC_FILES=../ar-release/ar-release.spec ../log-consumer/ar-consumer.spec ../ar-sync/ar-sync.spec ../compute-engine/ar-compute.spec ../compute-engine/ar-local-compute.spec ../ar-transit/ar-transit.spec ../ar-api/ar-api.spec
-SPRINT=21
+PACKAGES=ar-release ar-consumer ar-sync ar-compute ar-local-compute ar-web-api
+SRC_DIRS=../ar-release ../ar-consumer ../ar-sync ../ar-compute-engine ../ar-web-api
+SPEC_FILES=../ar-release/ar-release.spec ../ar-consumer/ar-consumer.spec ../ar-sync/ar-sync.spec ../ar-compute-engine/ar-compute-engine.spec ../ar-compute-engine/ar-local-compute-engine.spec ../ar-web-api/ar-web-api.spec
+
+SPRINT=22
 
 sources:
 	for i in ${SRC_DIRS}; do cd $$i ; make sources ; done
-	cd ../compute-engine; make -f Makefile.local sources ; cd ../builder
+	cd ../ar-compute-engine; make -f Makefile.local sources ; cd ../ar-builder
 	for i in ${SRC_DIRS}; do mv $$i/*.tar.gz . ; done
 
 rpms: sources
